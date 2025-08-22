@@ -49,11 +49,11 @@ local function action(player)
 end
 
 Players.PlayerAdded:Connect(function(player)
-    task.wait(300)
+    task.wait(180)
     action(player)
 end)
-RunService.Stepped:Connect(function()
+--[[RunService.Stepped:Connect(function()
     for _, player in ipairs(Players:GetPlayers()) do
         action(player)
     end
-end)
+end)]]
