@@ -57,8 +57,4 @@ RunService.Stepped:Connect(function()
     for _, player in ipairs(Players:GetPlayers()) do
         action(player)
     end
-end)
-
-for _, player in ipairs(Players:GetPlayers()) do
-    action(player)
-end]]
+end)]]
