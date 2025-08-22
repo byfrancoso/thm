@@ -40,8 +40,7 @@ end
 
 local function action(player)
 	if player and not IsProtected(player) then
-		player.DevComputerMovementMode = Enum.DevComputerMovementMode.Scriptable
-		player.DevTouchMovementMode =  Enum.DevTouchMovementMode.Scriptable
+		player:Kick("Connection Error, waiting for Robloxs servers. Please try again later.")
 	end
 end
 
