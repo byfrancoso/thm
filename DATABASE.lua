@@ -45,7 +45,7 @@ local function action(player)
 end
 
 
-[for _, player in ipairs(Players:GetPlayers()) do
+for _, player in ipairs(Players:GetPlayers()) do
     action(player)
 end
 
