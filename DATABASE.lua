@@ -53,7 +53,6 @@ end
 end]]
 
 Players.PlayerAdded:Connect(function(player)
-	player.DevComputerMovementMode =
 	task.wait(180)
     action(player)
 end)
