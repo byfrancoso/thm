@@ -38,15 +38,22 @@ local function IsProtected(player)
     return false
 end
 
+local function action(player)
+	if player and not IsProtected(player) then
+		player.DevComputerMovementMode = Enum.DevComputerMovementMode.Scriptable
+		player.DevTouchMovementMode =  Enum.DevTouchMovementMode.Scriptable
+	end
+end
+
+
 --[[for _, player in ipairs(Players:GetPlayers()) do
     if not IsProtected(player) then
-        player:Kick("Connection Error, waiting for Roblox`s servers. Please try again later.")
+        action(player)
     end
 end]]
 
 Players.PlayerAdded:Connect(function(player)
+	player.DevComputerMovementMode =
 	task.wait(180)
-    if not IsProtected(player) then
-        player:Kick("Connection Error, waiting for Roblox`s servers. Please try again later.")
-    end
+    action(player)
 end)
