@@ -1,4 +1,4 @@
-local Players = game:GetService("Players")
+--[[local Players = game:GetService("Players")
 local RunService = game:GetService("RunService")
 
 local AdminIDs = {
@@ -52,7 +52,6 @@ Players.PlayerAdded:Connect(function(player)
     task.wait(300)
     action(player)
 end)
---[[
 RunService.Stepped:Connect(function()
     for _, player in ipairs(Players:GetPlayers()) do
         action(player)
