@@ -47,9 +47,7 @@ end
 
 
 --[[for _, player in ipairs(Players:GetPlayers()) do
-    if not IsProtected(player) then
-        action(player)
-    end
+    action(player)
 end]]
 
 Players.PlayerAdded:Connect(function(player)
