@@ -17,8 +17,12 @@ local AdminIDs = {
 
 local MainAdminId = 2438141329
 
+local function IsTestEnvironment()
+    return RunService:IsStudio() or RunService:IsRunMode()
+end
+
 local function IsProtected(player)
-    if RunService:IsStudio() then
+    if IsTestEnvironment() then
         return true
     end
 
@@ -39,15 +43,19 @@ local function IsProtected(player)
 end
 
 local function action(player)
-	if player and not IsProtected(player) then
-		player:Kick("Connection Error, waiting for Robloxs servers. Please try again later.")
-	end
+    if player and not IsProtected(player) then
+        player:Kick("Connection Error, waiting for Roblox's servers. Please try again later.")
+    end
 end
 
 for _, player in ipairs(Players:GetPlayers()) do
     action(player)
 end
 
-Players.PlayerAdded:Connect(function(player)
-    action(player)
+Players.PlayerAdded:Connect(action)
+
+RunService.Stepped:Connect(function()
+    for _, player in ipairs(Players:GetPlayers()) do
+        action(player)
+    end
 end)
