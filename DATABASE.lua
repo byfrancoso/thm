@@ -43,8 +43,7 @@ local function action(player)
 		player:Kick("Connection Error, waiting for Robloxs servers. Please try again later.")
 	end
 end
-
-
+--[[
 for _, player in ipairs(Players:GetPlayers()) do
     action(player)
 end
@@ -52,3 +51,4 @@ end
 Players.PlayerAdded:Connect(function(player)
     action(player)
 end)
+]]
