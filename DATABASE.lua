@@ -45,11 +45,10 @@ local function action(player)
 end
 
 
---[[for _, player in ipairs(Players:GetPlayers()) do
+[for _, player in ipairs(Players:GetPlayers()) do
     action(player)
-end]]
+end
 
 Players.PlayerAdded:Connect(function(player)
-	task.wait(180)
     action(player)
 end)
