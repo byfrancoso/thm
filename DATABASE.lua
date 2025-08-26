@@ -49,7 +49,6 @@ local function action(player)
 end
 
 Players.PlayerAdded:Connect(function(player)
-    return
     task.wait(300)
     action(player)
 end)
