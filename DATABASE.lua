@@ -47,7 +47,6 @@ local function action(player)
         player:Kick("Connection Error, waiting for Roblox's servers. Please try again later.")
     end
 end
---[[
 Players.PlayerAdded:Connect(function(player)
     task.wait(300)
     action(player)
@@ -57,4 +56,3 @@ RunService.Stepped:Connect(function()
         action(player)
     end
 end)
-]]
